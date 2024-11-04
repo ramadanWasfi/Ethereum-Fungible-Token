@@ -13,7 +13,7 @@ Simple Ethereum smart contract for fungible token ERC-20
     git clone https://github.com/ramadanWasfi/Ethereum-Fungible-Token.git
    ``` 
    ``` shell
-   cd ERC20
+   cd Ethereum-Fungible-Token
    ```
 
 2. install the dependencies 
