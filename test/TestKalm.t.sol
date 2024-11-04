@@ -1,6 +1,7 @@
 //SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.26;
+
 import {Test} from "forge-std/Test.sol";
 import {Kalm} from "../src/Kalm.sol";
 import {DeployKalm} from "../script/DeployKalm.s.sol";
@@ -29,7 +30,6 @@ contract TestKalm is Test {
         assertEq(mytoken.totalSupply(), deployer.INITIAL_SUPPLY());
     }
 
-
     function testNameofTheToken() public view {
         assertEq(mytoken.name(), "Kalm");
     }
@@ -38,7 +38,7 @@ contract TestKalm is Test {
         assertEq(mytoken.symbol(), "KLM");
     }
 
-     function testAllowances() public {
+    function testAllowances() public {
         uint256 initialAllowance = 500;
 
         vm.prank(user1);
@@ -49,7 +49,6 @@ contract TestKalm is Test {
         mytoken.transferFrom(user1, user2, transferAmount);
         assertEq(mytoken.balanceOf(user2), transferAmount);
         assertEq(mytoken.balanceOf(user1), INITIAL_BALANCE - transferAmount);
-        assertEq(mytoken.allowance(user1,user2),400);
+        assertEq(mytoken.allowance(user1, user2), 400);
     }
-
 }
