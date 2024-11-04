@@ -49,6 +49,7 @@ contract TestKalm is Test {
         mytoken.transferFrom(user1, user2, transferAmount);
         assertEq(mytoken.balanceOf(user2), transferAmount);
         assertEq(mytoken.balanceOf(user1), INITIAL_BALANCE - transferAmount);
+        assertEq(mytoken.allowance(user1,user2),400);
     }
 
 }
